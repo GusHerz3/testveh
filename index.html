@@ -1,450 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario con PDF, Excel e Inventario</title>
-    <!-- Incluir Materialize CSS y JS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- Incluir PDFMake y SheetJS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.4/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.4/vfs_fonts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-</head>
-<body class="grey lighten-4">
-    <div class="container">
-        <div class="card-panel white z-depth-2">
-            <h5 class="center-align">DIRECCION DE TRANSPORTE UNIVERSITARIO</h5>
-            <p class="center-align">FORMATO DE INVENTARIO DE VEHICULOS PARA MANTENIMIENTO</p>
-            
-            <!-- Sección de Datos del Usuario y del Vehículo -->
-            <div class="section">
-                <h6>DATOS DEL USUARIO</h6>
-                <div class="input-field">
-                    <input type="text" id="espacio_universitario" placeholder="Espacio Universitario">
-                    <label for="espacio_universitario">Espacio Universitario</label>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12 m6">
-                        <input type="text" id="responsable" placeholder="Nombre del Responsable">
-                        <label for="responsable">Nombre del Responsable del Vehículo</label>
+    <title>DIRECCION DE TRANPORTE UNIVERSITARIO</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+ </head>
+ <body>
+
+    <header>
+
+        <img src="images/FONDO.jpg" class="img-fluid" alt="...">
+        <center>
+            <h5>
+                DIRECCION DE TRANPORTE UNIVERSITARIO.<BR>
+                FORMATO DE INVENTARIO DE VEHICULOS PARA MANTENIMIENTO.
+            </h5>
+        </center>
+    </header>
+    
+
+    
+    
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              DATOS DEL USUARIO
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                  <div class="mb-3">
+                    <label for="" class="form-label">ESPACIO UNIVERSITARIO</label>
+                    <input type="text" class="form-control" id="" placeholder="ESPACIO UNIVERSITARIO">
+                  </div>
+                  <div class="mb-3 col">
+                    <label for="" class="form-label">NOMBRE DEL RESPONSABLE DEL VEHICULO</label>
+                    <input type="text" class="form-control" id="" placeholder="NOMBRE DEL RESPONSABLE DEL VEHICULO">
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                        <label for="" class="form-label">FECHA</label>
+                        <input type="date" class="form-control" id="" >
                     </div>
-                    <div class="input-field col s12 m6">
-                        <input type="datetime-local" id="fecha_hora">
-                        <label for="fecha_hora">Fecha/Hora</label>
+                    <div class="col">
+                        <label for="" class="form-label">HORA</label>
+                        <input type="time" class="form-control" id="" >
                     </div>
-                    <div class="input-field col s12 m6">
-                        <input type="tel" id="telefono" placeholder="Teléfono">
-                        <label for="telefono">Teléfono</label>
+                    <div class="col">
+                        <label for="" class="form-label">TELEFONO</label>
+                        <input type="text" class="form-control" id="" placeholder="TELEFONO">
                     </div>
-                </div>
+                    
+                  </div>
             </div>
-
-            <div class="section">
-                <h6>DATOS DEL VEHÍCULO</h6>
-                <div class="row">
-                    <div class="input-field col s12 m6">
-                        <input type="text" id="marca" placeholder="Marca">
-                        <label for="marca">Marca</label>
-                    </div>
-                    <div class="input-field col s12 m6">
-                        <input type="text" id="tipo" placeholder="Tipo">
-                        <label for="tipo">Tipo</label>
-                    </div>
-                    <div class="input-field col s12 m6">
-                        <input type="text" id="modelo" placeholder="Modelo">
-                        <label for="modelo">Modelo</label>
-                    </div>
-                    <div class="input-field col s12 m6">
-                        <input type="text" id="placas" placeholder="Placas">
-                        <label for="placas">Placas</label>
-                    </div>
-                    <div class="input-field col s12 m6">
-                        <input type="text" id="kilometraje" placeholder="Kilometraje">
-                        <label for="kilometraje">Kilometraje</label>
-                    </div>
-                    <div class="input-field col s12 m6">
-                        <input type="text" id="no_eco" placeholder="No ECO">
-                        <label for="no_eco">No ECO</label>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Formulario de Contacto -->
-            <h5 class="center-align">Formulario de Contacto</h5>
-            <form id="contactForm">
-                <div class="row">
-                    <div class="input-field col s12 m6">
-                        <input type="text" id="name" name="name" required>
-                        <label for="name">Nombre</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <textarea id="message" name="message" class="materialize-textarea" required></textarea>
-                        <label for="message">Mensaje</label>
-                    </div>
-                </div>
-
-                <!-- Inventarios -->
-                <h6 class="center-align">Inventario</h6>
-                <div class="row">
-                    <!-- Tabla Delantera Frontal -->
-                    <div class="col s12 m6">
-                        <table class="highlight">
-                            <thead>
-                                <tr>
-                                    <th>Delantera Frontal</th>
-                                    <th>Sí</th>
-                                    <th>No</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Parabrisas</td>
-                                    <td><label><input type="radio" name="parabrisas" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="parabrisas" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Limpiadores</td>
-                                    <td><label><input type="radio" name="limpiadores" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="limpiadores" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Antena</td>
-                                    <td><label><input type="radio" name="antena" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="antena" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Defensa</td>
-                                    <td><label><input type="radio" name="defensa" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="defensa" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Moldura</td>
-                                    <td><label><input type="radio" name="moldura" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="moldura" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Parrilla</td>
-                                    <td><label><input type="radio" name="parrilla" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="parrilla" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Porta Placa</td>
-                                    <td><label><input type="radio" name="portaplaca" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="portaplaca" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Faros</td>
-                                    <td><label><input type="radio" name="faros" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="faros" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Emblema</td>
-                                    <td><label><input type="radio" name="emblema" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="emblema" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Cofre</td>
-                                    <td><label><input type="radio" name="cofre" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="cofre" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Faros de Niebla</td>
-                                    <td><label><input type="radio" name="farosniebla" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="farosniebla" value="No" required><span></span></label></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Tabla Costados -->
-                    <div class="col s12 m6">
-                        <table class="highlight">
-                            <thead>
-                                <tr>
-                                    <th>Costados</th>
-                                    <th>Derecho Sí</th>
-                                    <th>Derecho No</th>
-                                    <th>Izquierdo Sí</th>
-                                    <th>Izquierdo No</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Cristales Puertas</td>
-                                    <td><label><input type="radio" name="cristales_derecho" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="cristales_derecho" value="No" required><span></span></label></td>
-                                    <td><label><input type="radio" name="cristales_izquierdo" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="cristales_izquierdo" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Puertas</td>
-                                    <td><label><input type="radio" name="puertas_derecho" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="puertas_derecho" value="No" required><span></span></label></td>
-                                    <td><label><input type="radio" name="puertas_izquierdo" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="puertas_izquierdo" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Espejo Lateral</td>
-                                    <td><label><input type="radio" name="espejo_derecho" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="espejo_derecho" value="No" required><span></span></label></td>
-                                    <td><label><input type="radio" name="espejo_izquierdo" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="espejo_izquierdo" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Molduras</td>
-                                    <td><label><input type="radio" name="molduras_derecho" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="molduras_derecho" value="No" required><span></span></label></td>
-                                    <td><label><input type="radio" name="molduras_izquierdo" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="molduras_izquierdo" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Llantas</td>
-                                    <td><label><input type="radio" name="llantas_derecho" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="llantas_derecho" value="No" required><span></span></label></td>
-                                    <td><label><input type="radio" name="llantas_izquierdo" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="llantas_izquierdo" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Tapones Llantas</td>
-                                    <td><label><input type="radio" name="tapones_derecho" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="tapones_derecho" value="No" required><span></span></label></td>
-                                    <td><label><input type="radio" name="tapones_izquierdo" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="tapones_izquierdo" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Tapón Gasolina</td>
-                                    <td><label><input type="radio" name="tapon_derecho" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="tapon_derecho" value="No" required><span></span></label></td>
-                                    <td><label><input type="radio" name="tapon_izquierdo" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="tapon_izquierdo" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Loderas</td>
-                                    <td><label><input type="radio" name="loderas_derecho" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="loderas_derecho" value="No" required><span></span></label></td>
-                                    <td><label><input type="radio" name="loderas_izquierdo" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="loderas_izquierdo" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Chapas y Manijas</td>
-                                    <td><label><input type="radio" name="chapas_derecho" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="chapas_derecho" value="No" required><span></span></label></td>
-                                    <td><label><input type="radio" name="chapas_izquierdo" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="chapas_izquierdo" value="No" required><span></span></label></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Nueva Tabla Trasera Debajo -->
-                <div class="row">
-                    <div class="col s12">
-                        <table class="highlight">
-                            <thead>
-                                <tr>
-                                    <th>Trasera</th>
-                                    <th>Sí</th>
-                                    <th>No</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Medallón</td>
-                                    <td><label><input type="radio" name="medallon" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="medallon" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Micas Calaveras</td>
-                                    <td><label><input type="radio" name="micas_calaveras" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="micas_calaveras" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Defensa</td>
-                                    <td><label><input type="radio" name="defensa_trasera" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="defensa_trasera" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Emblemas</td>
-                                    <td><label><input type="radio" name="emblemas_traseros" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="emblemas_traseros" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Chapa Cajuela</td>
-                                    <td><label><input type="radio" name="chapa_cajuela" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="chapa_cajuela" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Molduras</td>
-                                    <td><label><input type="radio" name="molduras_traseras" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="molduras_traseras" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Herramienta</td>
-                                    <td><label><input type="radio" name="herramienta" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="herramienta" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Gato</td>
-                                    <td><label><input type="radio" name="gato" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="gato" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Llanta Refacc.</td>
-                                    <td><label><input type="radio" name="llanta_refaccion" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="llanta_refaccion" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Porta Placa</td>
-                                    <td><label><input type="radio" name="portaplaca_trasera" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="portaplaca_trasera" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Limpiador</td>
-                                    <td><label><input type="radio" name="limpiador_trasero" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="limpiador_trasero" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Extintor</td>
-                                    <td><label><input type="radio" name="extintor" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="extintor" value="No" required><span></span></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Alfombra</td>
-                                    <td><label><input type="radio" name="alfombra" value="Sí" required><span></span></label></td>
-                                    <td><label><input type="radio" name="alfombra" value="No" required><span></span></label></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <button type="button" onclick="submitForm()" class="btn waves-effect waves-light blue darken-2">Enviar Archivos por Correo</button>
-            </form>
+          </div>
         </div>
-    </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              DATOS DEL VEHICULO
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="" class="form-label">MARCA</label>
+                        <input type="text" class="form-control" id="" placeholder="MARCA">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="" class="form-label">TIPO</label>
+                        <input type="text" class="form-control" id="" placeholder="TIPO">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="" class="form-label">MODELO</label>
+                        <input type="text" class="form-control" id="" placeholder="MODELO">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="" class="form-label">PLACAS</label>
+                        <input type="text" class="form-control" id="" placeholder="PLACAS">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="" class="form-label">KILOMETRAJE</label>
+                        <input type="text" class="form-control" id="" placeholder="KILOMETRAJE">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="" class="form-label">NO. ECO</label>
+                        <input type="TEXT" class="form-control" id="" placeholder="NO. ECP">
+                    </div>  
+                </div>
+                <!-- EMPIEZA INPUTS-->
+                <div class="row">
+                    <table class="table">
+                        <tr>
+                            <td>DELANTERA/FRONTAL</td><td>SI</td><td>NO</td>
+                        </tr>
+                        <tr>
+                            <td>PARABRISAS</td><td>si</td><td>no</td>
+                        </tr>
+                        <tr>
+                            <td>LIMPIADORES</td><td>si</td><td>no</td>
+                        </tr>
+                    </table>
+                </div>
+                 <!--TERMINA INPUTS-->
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              OTRO
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            M.updateTextFields();
-        });
 
-        async function submitForm() {
-            // Captura de datos del formulario
-            const userData = {
-                espacioUniversitario: document.getElementById('espacio_universitario').value.trim(),
-                responsable: document.getElementById('responsable').value.trim(),
-                fechaHora: document.getElementById('fecha_hora').value,
-                telefono: document.getElementById('telefono').value.trim(),
-                marca: document.getElementById('marca').value.trim(),
-                tipo: document.getElementById('tipo').value.trim(),
-                modelo: document.getElementById('modelo').value.trim(),
-                placas: document.getElementById('placas').value.trim(),
-                kilometraje: document.getElementById('kilometraje').value.trim(),
-                noEco: document.getElementById('no_eco').value.trim(),
-            };
 
-            const name = document.getElementById('name').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            // Validar que los campos no estén vacíos
-            if (!name || !message) {
-                M.toast({html: 'Por favor, complete todos los campos antes de enviar.'});
-                return;
-            }
-
-            // Captura de valores de los radio buttons de inventario
-            const inventory = {};
-            document.querySelectorAll('table tbody tr').forEach(row => {
-                const itemName = row.cells[0].innerText;
-                const siChecked = row.querySelector('input:checked')?.value || 'Sin selección';
-                inventory[itemName] = siChecked;
-            });
-
-            // Generar PDF con PDFMake
-            const docDefinition = {
-                content: [
-                    { text: 'Formulario de Contacto', style: 'header' },
-                    { text: `Nombre: ${name}`, margin: [0, 10, 0, 5] },
-                    { text: 'Mensaje:', margin: [0, 5, 0, 5] },
-                    { text: message, margin: [0, 5, 0, 10] },
-                    { text: 'Datos del Usuario', style: 'header' },
-                    { text: `Espacio Universitario: ${userData.espacioUniversitario}`, margin: [0, 5, 0, 5] },
-                    { text: `Responsable: ${userData.responsable}`, margin: [0, 5, 0, 5] },
-                    { text: `Fecha/Hora: ${userData.fechaHora}`, margin: [0, 5, 0, 5] },
-                    { text: `Teléfono: ${userData.telefono}`, margin: [0, 5, 0, 5] },
-                    { text: 'Datos del Vehículo', style: 'header' },
-                    { text: `Marca: ${userData.marca}`, margin: [0, 5, 0, 5] },
-                    { text: `Tipo: ${userData.tipo}`, margin: [0, 5, 0, 5] },
-                    { text: `Modelo: ${userData.modelo}`, margin: [0, 5, 0, 5] },
-                    { text: `Placas: ${userData.placas}`, margin: [0, 5, 0, 5] },
-                    { text: `Kilometraje: ${userData.kilometraje}`, margin: [0, 5, 0, 5] },
-                    { text: `No ECO: ${userData.noEco}`, margin: [0, 5, 0, 5] },
-                    { text: 'Inventario:', margin: [0, 10, 0, 5], style: 'header' },
-                    { ul: Object.entries(inventory).map(([key, value]) => `${key}: ${value}`) }
-                ],
-                styles: {
-                    header: {
-                        fontSize: 18,
-                        bold: true
-                    }
-                },
-                defaultStyle: {
-                    font: 'Roboto'
-                }
-            };
-
-            // Generar PDF y convertir a Blob
-            const pdfBlob = await new Promise(resolve => {
-                pdfMake.createPdf(docDefinition).getBlob(resolve);
-            });
-
-            // Generar Excel con SheetJS
-            const wsData = [
-                ['Nombre', 'Mensaje'],
-                [name, message],
-                [],
-                ['Datos del Usuario', ''],
-                ['Espacio Universitario', userData.espacioUniversitario],
-                ['Responsable', userData.responsable],
-                ['Fecha/Hora', userData.fechaHora],
-                ['Teléfono', userData.telefono],
-                [],
-                ['Datos del Vehículo', ''],
-                ['Marca', userData.marca],
-                ['Tipo', userData.tipo],
-                ['Modelo', userData.modelo],
-                ['Placas', userData.placas],
-                ['Kilometraje', userData.kilometraje],
-                ['No ECO', userData.noEco],
-                [],
-                ['Inventario', 'Estado'],
-                ...Object.entries(inventory).map(([key, value]) => [key, value])
-            ];
-            const wb = XLSX.utils.book_new();
-            const ws = XLSX.utils.aoa_to_sheet(wsData);
-            XLSX.utils.book_append_sheet(wb, ws, 'Datos');
-            const excelBlob = await new Promise(resolve => {
-                const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-                resolve(new Blob([wbout], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }));
-            });
-
-            // Enviar los archivos al servidor
-            const formData = new FormData();
-            formData.append('pdf', pdfBlob, 'formulario.pdf');
-            formData.append('excel', excelBlob, 'formulario.xlsx');
-
-            fetch('send_mail.php', {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => response.json())
-            .then(data => M.toast({html: data.message}))
-            .catch(error => console.error('Error al enviar los archivos:', error));
-        }
-    </script>
-</body>
-</html>
+    <footer>
+        <img src="images/footer.jpg" class="img-fluid" alt="...">
+    </footer>
+    
+ </body>
+ </html>
